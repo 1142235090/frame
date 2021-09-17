@@ -20,7 +20,7 @@ public class GatewayFilter implements GlobalFilter {
 
     // 白名单，用于跳过某些请求
     private static final String[] whiteList = {
-            "/system/getConfig"
+            "/system/config"
     };
 
     @Override
@@ -30,6 +30,7 @@ public class GatewayFilter implements GlobalFilter {
         // 这里可以用来做用户登录验证
         // 跳过不需要验证的路径
         if (Arrays.asList(whiteList).contains(url)) {
+            // 传递给下一个过滤器
             return chain.filter(exchange);
         }
         return chain.filter(exchange);
