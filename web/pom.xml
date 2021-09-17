@@ -17,15 +17,21 @@
     <properties>
         <java.version>11</java.version>
         <springboot.version>2.2.2.RELEASE</springboot.version>
-        <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
+        <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
         <mybatis.version>2.1.1</mybatis.version>
         <mybatis-plus.version>3.3.0</mybatis-plus.version>
         <druid.version>1.1.10</druid.version>
+        <nacos.version>2.1.1.RELEASE</nacos.version>
+        <lombok.version>1.18.10</lombok.version>
+        <mysql.connector.version>8.0.21</mysql.connector.version>
+
     </properties>
 
     <modules>
         <!-- 系统模块 -->
         <module>system</module>
+        <!-- 路由模块 -->
+        <module>gateway</module>
     </modules>
 
     <build>

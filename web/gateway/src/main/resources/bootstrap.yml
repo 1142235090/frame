@@ -1,0 +1,24 @@
+spring:
+  server:
+    port: 80
+  application:
+    name: hz-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.202:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true    # 是否开启负载均衡策略
+      routes:
+        # system
+        - id: system
+          uri: lb://hz-system
+          # 断言
+          predicates:
+            - Path=/system/**
+          # 过滤
+          filters:
+            # 剥离一级路径
+            - StripPrefix=1
