@@ -17,6 +17,7 @@
     <properties>
         <java.version>11</java.version>
         <springboot.version>2.2.2.RELEASE</springboot.version>
+        <feign.version>2.2.0.RELEASE</feign.version>
         <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
         <mybatis.version>2.1.1</mybatis.version>
         <mybatis-plus.version>3.3.0</mybatis-plus.version>
@@ -24,14 +25,18 @@
         <nacos.version>2.1.1.RELEASE</nacos.version>
         <lombok.version>1.18.10</lombok.version>
         <mysql.connector.version>8.0.21</mysql.connector.version>
-
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <modules>
         <!-- 系统模块 -->
-        <module>system</module>
+        <module>subsystem</module>
         <!-- 路由模块 -->
         <module>gateway</module>
+        <!-- 路由模块 -->
+        <module>core</module>
+        <!-- api模块 -->
+        <module>subsystem-api</module>
     </modules>
 
     <build>
