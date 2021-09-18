@@ -16,7 +16,7 @@ public class RemoteSystemFactory implements FallbackFactory<SystemFeignService> 
     public SystemFeignService create(Throwable throwable) {
         return new SystemFeignService(){
             @Override
-            public SysSystem startActBusiness(Long systemId) {
+            public SysSystem getSystemById(Long systemId) {
                 return null;
             }
         };
