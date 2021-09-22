@@ -22,3 +22,6 @@ spring:
           filters:
             # 剥离一级路径
             - StripPrefix=1
+feign:
+  hystrix:
+    enabled: true

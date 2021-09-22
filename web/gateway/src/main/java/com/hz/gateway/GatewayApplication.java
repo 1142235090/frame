@@ -26,5 +26,4 @@ public class GatewayApplication {
     public HttpMessageConverters messageConverters(ObjectProvider<HttpMessageConverter<?>> converters) {
         return new HttpMessageConverters(converters.orderedStream().collect(Collectors.toList()));
     }
-
 }
