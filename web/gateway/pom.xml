@@ -45,11 +45,6 @@
         </dependency>
         <dependency>
             <groupId>com.hz</groupId>
-            <artifactId>core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.hz</groupId>
             <artifactId>system-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
