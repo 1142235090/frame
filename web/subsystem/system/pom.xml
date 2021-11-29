@@ -32,6 +32,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <version>${springboot.version}</version>
         </dependency>
+        <!-- rabbitmq依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+            <version>${springboot.amqp.version}</version>
+        </dependency>
         <!--简略get、set方法-->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -67,9 +73,16 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
             <version>${nacos.version}</version>
         </dependency>
+        <!--mqtt-->
+        <dependency>
+            <groupId>org.eclipse.paho</groupId>
+            <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+            <version>${mqttv3.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.hz</groupId>
             <artifactId>system-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
     <dependencyManagement>

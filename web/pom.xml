@@ -26,6 +26,8 @@
         <lombok.version>1.18.10</lombok.version>
         <mysql.connector.version>8.0.21</mysql.connector.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <springboot.amqp.version>2.1.6.RELEASE</springboot.amqp.version>
+        <mqttv3.version>1.2.0</mqttv3.version>
     </properties>
 
     <modules>
