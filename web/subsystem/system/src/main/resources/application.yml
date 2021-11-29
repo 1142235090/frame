@@ -1,0 +1,72 @@
+useLocalCache: 123
+spring:
+  application:
+    name: hz-demo
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://192.168.1.202:1128/changsha?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+      username: root
+      password: 密码
+  #rabbitmq
+  rabbitmq:
+    port: 5672
+    username: root
+    password: 密码
+    virtual-host: /
+    host: 192.168.1.202
+    listener:
+      simple:
+        ## auto表示自动完成这次消费，manual表示需要手动告知完成消费
+        acknowledge-mode: manual
+        ## listener开几个线程处理数据
+        concurrency: 1
+        ## linstener 最大开几个线程
+        max-concurrency: 1
+        ## 一次拿几条数据
+        prefetch: 1
+        # 开启重试，重试5次 间隔1秒
+        retry:
+          # 开启消费者(程序出现异常)重试机制，默认开启并一直重试
+          enabled: true
+          # 最大重试次数
+          max-attempts: 5
+          # 重试间隔时间(毫秒)
+          initial-interval: 1000
+        # 是否进入死信队列 true是 false不是
+        default-requeue-rejected: false
+server:
+  # 服务HTTP端口号
+  port: 8081
+
+#mqtt
+mqtt:
+  clientid: mqtt-system
+  host: 192.168.1.202
+  username: root
+  pwd: 密码
+  completionTimeout: 30000
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.hz.system.dao.**
+
+mybatis-plus:
+  type-aliases-package: com.hz.system.entity
+  global-config:
+    db-config:
+      id-type: auto
+      field-strategy: not_empty
+      #驼峰下划线转换
+      column-underline: true
+      #逻辑删除配置
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      db-type: mysql
+    refresh: false
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    cache-enabled: false
