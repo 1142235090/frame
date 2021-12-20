@@ -24,7 +24,7 @@ public class SendMessage implements CommandLineRunner {
     @Override
     public void run(String... args) throws InterruptedException {
         //测试使用代码
-        Boolean where = true;
+        Boolean where = false;
         while (where) {
             System.out.println("Sending message...");
             try {
