@@ -20,6 +20,8 @@
     <modules>
         <!-- api模块 -->
         <module>system</module>
+        <!-- 定时任务模块 -->
+        <module>task</module>
     </modules>
 
     <build>
