@@ -30,6 +30,7 @@ public class VersionLock implements Runnable {
 //            System.out.println("11111更新成功");
         } else {
             System.out.println("更新失败22222");
+            // 在这里可以做错误的处理
         }
     }
 }

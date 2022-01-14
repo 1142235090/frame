@@ -11,6 +11,16 @@ import lombok.Data;
 @Data
 public class LockTeatBean {
     private static LockTeatBean lockTeatBean;
+
+    /**
+     * 保证线程安全
+     */
+    static{
+        lockTeatBean = new LockTeatBean();
+        lockTeatBean.setVersion(1);
+        lockTeatBean.setName("吴亦凡");
+        lockTeatBean.setSmile(true);
+    }
     // 版本号
     private int version;
     // 名称
@@ -23,10 +33,6 @@ public class LockTeatBean {
     }
 
     public static LockTeatBean getBean(){
-        lockTeatBean = new LockTeatBean();
-        lockTeatBean.setVersion(1);
-        lockTeatBean.setName("吴亦凡");
-        lockTeatBean.setSmile(true);
         return lockTeatBean;
     }
 
