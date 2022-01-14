@@ -12,7 +12,7 @@ import java.net.Socket;
  * @Date 2022/1/6 16:01
  * @Created by hanzhao
  */
-public class BIOClientTest implements Runnable {
+public class BIOClientThread implements Runnable {
     @Override
     public void run() {
         int port = 9999;

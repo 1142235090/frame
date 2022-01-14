@@ -9,6 +9,6 @@ package com.hz.task.bio;
 public class ClientStart {
 
     public static void main(String[] args) {
-        new BIOClientTest().run();
+        new BIOClientThread().run();
     }
 }

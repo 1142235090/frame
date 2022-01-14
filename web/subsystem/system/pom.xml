@@ -38,12 +38,6 @@
             <artifactId>spring-boot-starter-amqp</artifactId>
             <version>${springboot.amqp.version}</version>
         </dependency>
-        <!--简略get、set方法-->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-        </dependency>
         <!-- mybatis -->
         <dependency>
             <groupId>com.baomidou</groupId>
