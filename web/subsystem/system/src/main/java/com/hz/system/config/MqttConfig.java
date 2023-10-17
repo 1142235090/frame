@@ -6,6 +6,8 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.UUID;
+
 /**
  * @Classname MqttBaseConfig
  * @Date 2021/6/29 16:39
@@ -48,7 +50,7 @@ public class MqttConfig {
         //2.创建mqtt客户端
         MqttClient client = null;
         try {
-            client = new MqttClient("tcp://"+mqttHost, clientId,null);
+            client = new MqttClient("tcp://"+mqttHost, clientId+ UUID.randomUUID(),null);
             client.connect(mOptions);//连接broker
             client.setCallback(mqttCallback);//设置回调
         } catch (MqttException e) {

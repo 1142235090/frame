@@ -1,0 +1,31 @@
+dataSources:
+  ds:
+    dataSourceClassName: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://182.92.101.122:1128/zhaohan_test?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: hydf@8888
+
+rules:
+  - !SHARDING
+    tables:
+      sys_system:
+        actualDataNodes: ds.sys_system # 与上方数据库配置一致，需要分表的母表（模板表）
+        tableStrategy: # 策略
+          standard: # 标准
+            shardingColumn: create_time # 分表字段
+            shardingAlgorithmName: date_range_gorithm # 分表规则名
+        keyGenerateStrategy:
+          column: id
+          keyGeneratorName: snowflake
+    shardingAlgorithms: # 分表规则
+      date_range_gorithm: # 子规则，引用名
+        type: CLASS_BASED
+        props:
+          strategy: standard # 自定义规则
+          algorithmClassName: com.hz.system.sharding.DateRangeAlgorithm # 自定义规则实现类
+    keyGenerators:
+      snowflake:
+        type: SNOWFLAKE
+props:
+  sql-show: false

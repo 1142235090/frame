@@ -21,7 +21,7 @@ public class SysSystem implements Serializable {
      * 主键
      */
     @TableId(value = "id",type = IdType.AUTO)
-    private Integer id;
+    private Long id;
     /**
      * 子系统名称
      */
@@ -84,11 +84,11 @@ public class SysSystem implements Serializable {
     private String systemKey;
 
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

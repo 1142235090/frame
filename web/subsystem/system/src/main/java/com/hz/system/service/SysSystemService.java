@@ -17,6 +17,12 @@ public interface SysSystemService {
      * @param id 主键
      * @return 实例对象
      */
-    SysSystem queryById(Integer id);
+    SysSystem queryById(Long id);
+    SysSystem testCache(Integer id);
 
+    SysSystem updateCache(Integer id);
+
+    int insert(SysSystem system);
+
+    void deleteById(Long id);
 }

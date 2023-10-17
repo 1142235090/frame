@@ -1,4 +1,4 @@
-package com.hz.task.syn.fake;
+package com.hz.task.fake_syn_io;
 
 import com.hz.task.bio.BIOServerThread;
 

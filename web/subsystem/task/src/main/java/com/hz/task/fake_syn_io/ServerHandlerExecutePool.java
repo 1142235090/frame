@@ -1,4 +1,4 @@
-package com.hz.task.syn.fake;
+package com.hz.task.fake_syn_io;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ExecutorService;
