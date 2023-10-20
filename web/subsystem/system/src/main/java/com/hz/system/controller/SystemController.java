@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RefreshScope
-@RequestMapping("test")
+@RequestMapping("/test")
 public class SystemController {
 
     @Value("${useLocalCache}")
@@ -47,10 +47,5 @@ public class SystemController {
     @RequestMapping(value = "/system", method = RequestMethod.POST)
     public int insert(@RequestBody SysSystem system) {
         return sysSystemService.insert(system);
-    }
-
-    @RequestMapping(value = "/test/cache", method = RequestMethod.GET)
-    public SysSystem testCache() {
-        return sysSystemService.queryById(1L);
     }
 }

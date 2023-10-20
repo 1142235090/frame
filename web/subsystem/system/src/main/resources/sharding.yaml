@@ -1,8 +1,14 @@
 dataSources:
-  ds:
+  ds0:
     dataSourceClassName: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://182.92.101.122:1128/zhaohan_test?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: hydf@8888
+  ds1:
+    dataSourceClassName: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://182.92.101.122:1128/zhaohan_test2?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
     username: root
     password: hydf@8888
 
@@ -10,7 +16,7 @@ rules:
   - !SHARDING
     tables:
       sys_system:
-        actualDataNodes: ds.sys_system # 与上方数据库配置一致，需要分表的母表（模板表）
+        actualDataNodes: ds1.sys_system # 与上方数据库配置一致，需要分表的母表（模板表）
         tableStrategy: # 策略
           standard: # 标准
             shardingColumn: create_time # 分表字段
